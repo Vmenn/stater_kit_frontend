@@ -1,0 +1,117 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    './index.html',
+    './src/**/*.{vue,js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        enterprise: {
+          50: '#f0f4ff',
+          100: '#dbe4ff',
+          200: '#bac8ff',
+          300: '#91a7ff',
+          400: '#748ffc',
+          500: '#5c7cfa',
+          600: '#4c6ef5',
+          700: '#4263eb',
+          800: '#3b5bdb',
+          900: '#364fc7',
+          950: '#2c3e8a',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.2s ease-in-out',
+        'slide-in-right': 'slideInRight 0.3s ease-out',
+        'slide-in-left': 'slideInLeft 0.3s ease-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideInRight: {
+          '0%': { transform: 'translateX(100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideInLeft: {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+    },
+  },
+  plugins: [
+    require('daisyui'),
+  ],
+  daisyui: {
+    themes: [
+      {
+        enterpriseLight: {
+          primary: '#4c6ef5',
+          'primary-focus': '#4263eb',
+          'primary-content': '#ffffff',
+          secondary: '#7950f2',
+          'secondary-focus': '#6741d9',
+          'secondary-content': '#ffffff',
+          accent: '#12b886',
+          'accent-focus': '#0ca678',
+          'accent-content': '#ffffff',
+          neutral: '#374151',
+          'neutral-focus': '#1f2937',
+          'neutral-content': '#f9fafb',
+          'base-100': '#ffffff',
+          'base-200': '#f9fafb',
+          'base-300': '#f3f4f6',
+          'base-content': '#1f2937',
+          info: '#3abff8',
+          success: '#36d399',
+          warning: '#fbbd23',
+          error: '#f87272',
+        },
+      },
+      {
+        enterpriseDark: {
+          primary: '#5c7cfa',
+          'primary-focus': '#4c6ef5',
+          'primary-content': '#ffffff',
+          secondary: '#9775fa',
+          'secondary-focus': '#7950f2',
+          'secondary-content': '#ffffff',
+          accent: '#20c997',
+          'accent-focus': '#12b886',
+          'accent-content': '#ffffff',
+          neutral: '#1e293b',
+          'neutral-focus': '#0f172a',
+          'neutral-content': '#e2e8f0',
+          'base-100': '#0f172a',
+          'base-200': '#1e293b',
+          'base-300': '#334155',
+          'base-content': '#e2e8f0',
+          info: '#38bdf8',
+          success: '#4ade80',
+          warning: '#fbbf24',
+          error: '#f87171',
+        },
+      },
+      'light',
+      'dark',
+    ],
+    darkTheme: 'enterpriseDark',
+    base: true,
+    styled: true,
+    utils: true,
+    prefix: '',
+    logs: false,
+  },
+}
